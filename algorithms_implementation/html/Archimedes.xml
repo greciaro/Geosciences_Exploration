@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mscript xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <version>9.1</version>
+   <release>2016b</release>
+   <date>2016-10-20</date>
+   <cell>
+      <count>1</count>
+      <mcode>function []= Archimedes(N)
+%This program runs the algorithm that Archimedes used to calculate pi.
+% N=30;
+a=1;
+b=6;
+nn=0;
+dif=100;
+dif6=[0,0,0,0];
+pi_estimate=1;
+pi_estimate6=[0,0,0,0];
+N6=[0,0,0,0];
+error6=[0,0,0,0];
+c=0;
+
+while nn&lt;N;
+   nn=nn+1;
+   b=2*b;
+   a=(2-(4-a^2)^(1/2))^(1/2);
+   L=(a*b)/2;
+   u=L/((1-(a^2)/2)^(1/2));
+   pi_estimate=(u+L)/2;
+   error=(u-L)/2;
+   dif=abs(pi_estimate-pi);
+   if dif&lt;0.0000009;
+   c=c+1;
+   N6(c)=nn;
+   pi_estimate6(c)=pi_estimate;
+   dif6(c)=dif;
+   error6(c)=error;
+   end;
+end;
+format long;
+fprintf('Total number of iterations (N)= %d ',N);
+fprintf('\n');
+fprintf('real pi value = %d ',pi);
+fprintf('\n');
+fprintf('estimated pi value = %d ', pi_estimate);
+fprintf('\n');
+fprintf('value difference = %d ', dif);
+fprintf('\n');
+fprintf('error = %d ', error);
+fprintf('\n');
+fprintf('\n');
+fprintf('\n');
+fprintf('Number of iterations to meet the 6th decimal= %d ',N6(1));
+fprintf('\n');
+fprintf('real pi value = %d ',pi);
+fprintf('\n');
+fprintf('estimated pi value = %d ', pi_estimate6(1));
+fprintf('\n');
+fprintf('value difference = %d ', dif6(1));
+fprintf('\n');
+fprintf('error = %d ', error6(1));
+fprintf('\n');
+end</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve"><mwsh:keywords xml:space="preserve">function</mwsh:keywords> []= Archimedes(N)
+<mwsh:comments xml:space="preserve">%This program runs the algorithm that Archimedes used to calculate pi.</mwsh:comments><mwsh:comments xml:space="preserve">% N=30;</mwsh:comments>
+a=1;
+b=6;
+nn=0;
+dif=100;
+dif6=[0,0,0,0];
+pi_estimate=1;
+pi_estimate6=[0,0,0,0];
+N6=[0,0,0,0];
+error6=[0,0,0,0];
+c=0;
+
+<mwsh:keywords xml:space="preserve">while</mwsh:keywords> nn&lt;N;
+   nn=nn+1;
+   b=2*b;
+   a=(2-(4-a^2)^(1/2))^(1/2);
+   L=(a*b)/2;
+   u=L/((1-(a^2)/2)^(1/2));
+   pi_estimate=(u+L)/2;
+   error=(u-L)/2;
+   dif=abs(pi_estimate-pi);
+   <mwsh:keywords xml:space="preserve">if</mwsh:keywords> dif&lt;0.0000009;
+   c=c+1;
+   N6(c)=nn;
+   pi_estimate6(c)=pi_estimate;
+   dif6(c)=dif;
+   error6(c)=error;
+   <mwsh:keywords xml:space="preserve">end</mwsh:keywords>;
+<mwsh:keywords xml:space="preserve">end</mwsh:keywords>;
+format <mwsh:strings xml:space="preserve">long</mwsh:strings>;
+fprintf(<mwsh:strings xml:space="preserve">'Total number of iterations (N)= %d '</mwsh:strings>,N);
+fprintf(<mwsh:strings xml:space="preserve">'\n'</mwsh:strings>);
+fprintf(<mwsh:strings xml:space="preserve">'real pi value = %d '</mwsh:strings>,pi);
+fprintf(<mwsh:strings xml:space="preserve">'\n'</mwsh:strings>);
+fprintf(<mwsh:strings xml:space="preserve">'estimated pi value = %d '</mwsh:strings>, pi_estimate);
+fprintf(<mwsh:strings xml:space="preserve">'\n'</mwsh:strings>);
+fprintf(<mwsh:strings xml:space="preserve">'value difference = %d '</mwsh:strings>, dif);
+fprintf(<mwsh:strings xml:space="preserve">'\n'</mwsh:strings>);
+fprintf(<mwsh:strings xml:space="preserve">'error = %d '</mwsh:strings>, error);
+fprintf(<mwsh:strings xml:space="preserve">'\n'</mwsh:strings>);
+fprintf(<mwsh:strings xml:space="preserve">'\n'</mwsh:strings>);
+fprintf(<mwsh:strings xml:space="preserve">'\n'</mwsh:strings>);
+fprintf(<mwsh:strings xml:space="preserve">'Number of iterations to meet the 6th decimal= %d '</mwsh:strings>,N6(1));
+fprintf(<mwsh:strings xml:space="preserve">'\n'</mwsh:strings>);
+fprintf(<mwsh:strings xml:space="preserve">'real pi value = %d '</mwsh:strings>,pi);
+fprintf(<mwsh:strings xml:space="preserve">'\n'</mwsh:strings>);
+fprintf(<mwsh:strings xml:space="preserve">'estimated pi value = %d '</mwsh:strings>, pi_estimate6(1));
+fprintf(<mwsh:strings xml:space="preserve">'\n'</mwsh:strings>);
+fprintf(<mwsh:strings xml:space="preserve">'value difference = %d '</mwsh:strings>, dif6(1));
+fprintf(<mwsh:strings xml:space="preserve">'\n'</mwsh:strings>);
+fprintf(<mwsh:strings xml:space="preserve">'error = %d '</mwsh:strings>, error6(1));
+fprintf(<mwsh:strings xml:space="preserve">'\n'</mwsh:strings>);
+<mwsh:keywords xml:space="preserve">end</mwsh:keywords></mwsh:code></mcode-xmlized>
+      <mcode-count>1</mcode-count>
+      <cellOutputTarget>1</cellOutputTarget>
+      <mcodeoutput class="codeoutput error">Not enough input arguments.
+
+Error in Archimedes (line 15)
+while nn&lt;N;
+</mcodeoutput>
+   </cell>
+   <originalCode>function []= Archimedes(N)&#xD;
+%This program runs the algorithm that Archimedes used to calculate pi.&#xD;
+% N=30;&#xD;
+a=1;&#xD;
+b=6;&#xD;
+nn=0;&#xD;
+dif=100;&#xD;
+dif6=[0,0,0,0];&#xD;
+pi_estimate=1;&#xD;
+pi_estimate6=[0,0,0,0];&#xD;
+N6=[0,0,0,0];&#xD;
+error6=[0,0,0,0];&#xD;
+c=0;&#xD;
+&#xD;
+while nn&lt;N;&#xD;
+   nn=nn+1; &#xD;
+   b=2*b;&#xD;
+   a=(2-(4-a^2)^(1/2))^(1/2);&#xD;
+   L=(a*b)/2;&#xD;
+   u=L/((1-(a^2)/2)^(1/2));&#xD;
+   pi_estimate=(u+L)/2;&#xD;
+   error=(u-L)/2;&#xD;
+   dif=abs(pi_estimate-pi);&#xD;
+   if dif&lt;0.0000009;&#xD;
+   c=c+1;&#xD;
+   N6(c)=nn;&#xD;
+   pi_estimate6(c)=pi_estimate;&#xD;
+   dif6(c)=dif;&#xD;
+   error6(c)=error;&#xD;
+   end;&#xD;
+end;&#xD;
+format long;&#xD;
+fprintf('Total number of iterations (N)= %d ',N);&#xD;
+fprintf('\n');&#xD;
+fprintf('real pi value = %d ',pi);&#xD;
+fprintf('\n');&#xD;
+fprintf('estimated pi value = %d ', pi_estimate);&#xD;
+fprintf('\n');&#xD;
+fprintf('value difference = %d ', dif);&#xD;
+fprintf('\n');&#xD;
+fprintf('error = %d ', error);&#xD;
+fprintf('\n');&#xD;
+fprintf('\n');&#xD;
+fprintf('\n');&#xD;
+fprintf('Number of iterations to meet the 6th decimal= %d ',N6(1));&#xD;
+fprintf('\n');&#xD;
+fprintf('real pi value = %d ',pi);&#xD;
+fprintf('\n');&#xD;
+fprintf('estimated pi value = %d ', pi_estimate6(1));&#xD;
+fprintf('\n');&#xD;
+fprintf('value difference = %d ', dif6(1));&#xD;
+fprintf('\n');&#xD;
+fprintf('error = %d ', error6(1));&#xD;
+fprintf('\n');&#xD;
+end&#xD;
+&#xD;
+</originalCode>
+   <m-file>Archimedes</m-file>
+   <filename>E:\GEOPHYS 112\HW3\Archimedes.m</filename>
+   <outputdir>E:\GEOPHYS 112\HW3\html</outputdir>
+</mscript>
