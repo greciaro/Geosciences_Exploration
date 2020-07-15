@@ -1,0 +1,36 @@
+g = fspecial('gaussian', [1000 1000], 0.5);
+g1 = fspecial('gaussian', [10 10], 0.5);
+g2 = fspecial('gaussian', [10 10], 50);
+g3 = fspecial('gaussian', [1000 1000], 50);
+satfilteredg = imfilter(sat, g);
+satfilteredg1 = imfilter(sat, g1);
+satfilteredg2 = imfilter(sat, g2);
+satfilteredg3 = imfilter(sat, g3);
+subplot(1,5,1);
+imshow(sat);
+title('Original');
+subplot(1,5,2);
+imshow(satfilteredg);
+title('Gaussian Filtered 1000x1000 SD=0.5');
+subplot(1,5,3);
+imshow(satfilteredg1);
+title('Gaussian Filtered 10x10 SD=0.5');
+subplot(1,5,4);
+imshow(satfilteredg2);
+title('Gaussian Filtered 10x10 SD=50');
+subplot(1,5,5);
+imshow(satfilteredg3);
+title('Gaussian Filtered 1000x1000 SD=50');
+%%
+
+sh = imsharpen(satfilteredg3,'Radius',2,'Amount',1);
+sh1 = imsharpen(satfilteredg3,'Radius',20,'Amount',10);
+subplot(1,3,1);
+imshow(satfilteredg3);
+title('Gaussian Filtered 1000x1000 SD=50');
+subplot(1,3,2);
+imshow(sh);
+title('Sharpened Image R=2 A=1');
+subplot(1,3,3);
+imshow(sh1);
+title('Sharpened Image R=20 A=10');
