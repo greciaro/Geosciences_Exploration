@@ -1,0 +1,33 @@
+%_Table 1.  Inklin Formation conglomerate pebble-count  parameters.
+%
+%	Plutonic (%)	Volcanic (%)  	Sedimentary & Limestons(%)
+%	
+%Petrofacies 1: Sinemurian subset
+    27    38    36    
+    16    36    48    
+    18    45    37    
+    31    56    13    
+    28    43    29    
+    24    44    32    
+    11    52    37    
+    13    33    54    
+    25    43    32    	
+%
+%Petrofacies 2: lower Pliensbachian subset
+     7    84     7
+     9    81    10
+     4    89     7
+     5    91     4
+     9    79    12
+     3    94     3
+    22    69     9
+    24    67     9
+%
+%Petrofacies 3: upper Pliensbachian subset
+    54    29    17
+    49    40    11
+    67    27     6
+    38    54     8
+    58    27    15
+    39    53     8
+    40    52     8
